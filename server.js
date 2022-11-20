@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import fetch from "node-fetch";
 import express from "express";
 import cors from "cors";
+const PORT = process.env.PORT || 8081;
 
 dotenv.config();
 
@@ -43,6 +44,6 @@ app.get("/match", (req, res) => {
     .catch((err) => res.status(404).send(err));
 });
 
-app.listen(3000, () => {
-  console.log("API Server está funcionando");
+app.listen(PORT, () => {
+  console.log("API Server funcionando na porta " + PORT);
 });
