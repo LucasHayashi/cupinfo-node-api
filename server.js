@@ -22,6 +22,7 @@ app.get("/standings", (req, res) => {
   fetch(url, options)
     .then((res) => res.json())
     .then((json) => {
+      console.log(json);
       res.status(200).send(json.data);
     })
     .catch((err) => res.status(404).send(err));
